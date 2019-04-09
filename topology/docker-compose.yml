@@ -9,7 +9,7 @@ services:
     networks:
       default:
         aliases:
-        - icat.example.org
+          - icat.example.org
     volumes:
       - /home/alanking/projects/builds/irods:/irods_packages:ro
       - /home/alanking/projects/builds/icommands:/icommands_packages:ro
@@ -21,7 +21,7 @@ services:
     networks:
       default:
         aliases:
-        - resource1.example.org
+          - resource1.example.org
     volumes:
       - /home/alanking/projects/builds/irods:/irods_packages:ro
       - /home/alanking/projects/builds/icommands:/icommands_packages:ro
@@ -35,7 +35,7 @@ services:
     networks:
       default:
         aliases:
-        - resource2.example.org
+          - resource2.example.org
     volumes:
       - /home/alanking/projects/builds/irods:/irods_packages:ro
       - /home/alanking/projects/builds/icommands:/icommands_packages:ro
@@ -49,7 +49,7 @@ services:
     networks:
       default:
         aliases:
-        - resource3.example.org
+          - resource3.example.org
     volumes:
       - /home/alanking/projects/builds/irods:/irods_packages:ro
       - /home/alanking/projects/builds/icommands:/icommands_packages:ro
