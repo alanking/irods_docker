@@ -11,7 +11,7 @@ fi
 
 # Build iRODS
 mkdir -p /irods_build && cd /irods_build
-cmake /irods_source
+cmake -DCMAKE_BUILD_TYPE=Debug /irods_source
 make -j package
 
 # Install packages for building iCommands.
@@ -23,7 +23,7 @@ fi
 
 # Build icommands
 mkdir -p /icommands_build && cd /icommands_build
-cmake /icommands_source
+cmake -DCMAKE_BUILD_TYPE=Debug /icommands_source
 make -j package
 
 # Copy packages to mounts
