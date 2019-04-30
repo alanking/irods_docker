@@ -24,7 +24,7 @@ _EOF_
 }
 
 image_name=irods_cen7_postgres
-docker_file=Dockerfile
+docker_file=Dockerfile.centos
 build_args=
 
 while [ -n "$1" ]; do

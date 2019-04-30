@@ -26,12 +26,10 @@ done
 for name in test_all_rules \
             test_catalog \
             test_control_plane \
-            test_dynamic_peps \
             test_iadmin \
             test_ichksum \
             test_ichmod \
             test_icommands_file_operations \
-            test_ifsck \
             test_ils \
             test_imeta_help \
             test_imeta_set \
@@ -53,8 +51,24 @@ for name in test_all_rules \
             test_quotas \
             test_resource_configuration \
             test_resource_tree \
-            test_resource_types \
-            test_rule_engine_plugin_framework \
+            test_resource_types.Test_Resource_CompoundWithMockarchive \
+            test_resource_types.Test_Resource_CompoundWithUnivmss \
+            test_resource_types.Test_Resource_Deferred \
+            test_resource_types.Test_Resource_MultiLayered \
+            test_resource_types.Test_Resource_NonBlocking \
+            test_resource_types.Test_Resource_Passthru \
+            test_resource_types.Test_Resource_Random \
+            test_resource_types.Test_Resource_RandomWithinRandom \
+            test_resource_types.Test_Resource_RandomWithinReplication \
+            test_resource_types.Test_Resource_Replication \
+            test_resource_types.Test_Resource_ReplicationToTwoCompound \
+            test_resource_types.Test_Resource_ReplicationToTwoCompoundResourcesWithPreferArchive \
+            test_resource_types.Test_Resource_ReplicationWithinReplication \
+            test_resource_types.Test_Resource_Replication_With_Retry \
+            test_resource_types.Test_Resource_RoundRobin \
+            test_resource_types.Test_Resource_RoundRobinWithinReplication \
+            test_resource_types.Test_Resource_Unixfilesystem \
+            test_resource_types.Test_Resource_WeightedPassthru \
             test_rule_engine_plugin_passthrough \
             test_rulebase \
             test_ssl \
