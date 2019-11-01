@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  irods-provider-tempzone:
+    build:
+        context: .
+        dockerfile: Dockerfile.provider
+    hostname: icat.tempZone.example.org
+    networks:
+      default:
+        aliases:
+          - icat.tempZone.example.org
+    volumes:
+      - ./configure_federation_tempZone.py:/configure_federation.py:ro
+    environment:
+     - REMOTE_ZONE=otherZone
+     - REMOTE_HOST=icat.otherZone.example.org
+  irods-provider-otherzone:
+    build:
+        context: .
+        dockerfile: Dockerfile.provider
+    hostname: icat.otherZone.example.org
+    networks:
+      default:
+        aliases:
+          - icat.otherZone.example.org
+    volumes:
+      - ./localhost_setup_postgres.input.otherZone:/var/lib/irods/packaging/localhost_setup_postgres.input
+      - ./configure_federation_otherZone.py:/configure_federation.py:ro
+    environment:
+     - REMOTE_ZONE=tempZone
+     - REMOTE_HOST=icat.tempZone.example.org
