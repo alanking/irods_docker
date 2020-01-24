@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+    icat:
+        build: ./icat
+    irods-catalog-provider:
+        build: ./provider
+        depends_on:
+            - icat
+    irods-catalog-consumer:
+        build: ./consumer
+        depends_on:
+            - irods-catalog-provider
+    irods-client-icommands:
+        build: ./client
