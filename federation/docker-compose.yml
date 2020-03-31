@@ -18,14 +18,13 @@ services:
   irods-provider-otherzone:
     build:
         context: .
-        dockerfile: Dockerfile.provider
+        dockerfile: Dockerfile.provider.otherZone
     hostname: icat.otherZone.example.org
     networks:
       default:
         aliases:
           - icat.otherZone.example.org
     volumes:
-      - ./localhost_setup_postgres.input.otherZone:/var/lib/irods/packaging/localhost_setup_postgres.input
       - ./configure_federation_otherZone.py:/configure_federation.py:ro
     environment:
      - REMOTE_ZONE=tempZone
