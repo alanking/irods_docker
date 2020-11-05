@@ -12,9 +12,17 @@ services:
           - icat.tempZone.example.org
     volumes:
       - ./configure_federation_tempZone.py:/configure_federation.py:ro
+      - /home/alanking/projects/builds:/builds:ro
+      - /home/alanking/projects/irods_repos/irods:/irods_source:ro
+      - /home/alanking/projects/irods_repos/irods_client_icommands:/icommands_source:ro
     environment:
-     - REMOTE_ZONE=otherZone
-     - REMOTE_HOST=icat.otherZone.example.org
+      - REMOTE_ZONE=otherZone
+      - REMOTE_HOST=icat.otherZone.example.org
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
+    privileged: true
   irods-provider-otherzone:
     build:
         context: .
@@ -26,6 +34,14 @@ services:
           - icat.otherZone.example.org
     volumes:
       - ./configure_federation_otherZone.py:/configure_federation.py:ro
+      - /home/alanking/projects/builds:/builds:ro
+      - /home/alanking/projects/irods_repos/irods:/irods_source:ro
+      - /home/alanking/projects/irods_repos/irods_client_icommands:/icommands_source:ro
     environment:
-     - REMOTE_ZONE=tempZone
-     - REMOTE_HOST=icat.tempZone.example.org
+      - REMOTE_ZONE=tempZone
+      - REMOTE_HOST=icat.tempZone.example.org
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
+    privileged: true
